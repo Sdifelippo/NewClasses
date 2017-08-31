@@ -65,8 +65,8 @@ class Car extends Factory {
 // Sports cars should also have the following additional properties: moonroof (false), enginetype (gasoline), convertible (true), doors (2)
 // Write your code below:
 class Sport extends Car {
-  constructor(model, trim, transmission, top, color, moonroof, seatstrim, audio, wheelstrim, enginetype, doors){
-    super(model, trim, transmission, moonroof, color, enginetype, doors)
+  constructor(model, trim, transmission, top, color, moonroof, seatstrim, audio, wheelstrim, enginetype, doors = 2){
+    super(model, doors, transmission, moonroof, color, enginetype)
     this.top = top
     this.moonroof = false
     this.audio = audio
