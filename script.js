@@ -40,11 +40,10 @@ class Factory {
 // Car should also have the following additional properties: enginesize (4), navigation (true), backupcamera (true), warranty (100,000 miles / 5 years)
 // Write your code below:
 class Car extends Factory {
-  constructor(model, doors, enginetype, color, transmission, trim, wheelstrim, seatstrim, audio, moonroof, enginesize = 4, navigation = true, backupcamera= true){
+  constructor(color, model, enginetype, transmission, trim, wheelstrim, audio, seatstrim, moonroof,doors= 2, warranty){
     super()
-    this.model = model
-    this.doors = doors
     this.color = color
+    this.model = model
     this.enginetype = enginetype
     this.transmission = transmission
     this.trim = trim
@@ -52,9 +51,10 @@ class Car extends Factory {
     this.audio = audio
     this.seatstrim = seatstrim
     this.moonroof = moonroof
-    this.enginesize = enginesize
-    this.navigation = navigation
-    this.backupcamera = backupcamera
+    this.doors = doors
+    this.enginesize = 4
+    this.navigation = true
+    this.backupcamera = true
     this.warranty = '100,000 miles / 5 years'
   }
 }
@@ -66,14 +66,19 @@ class Car extends Factory {
 // Sports cars should also have the following additional properties: moonroof (false), enginetype (gasoline), convertible (true), doors (2)
 // Write your code below:
 class Sport extends Car {
-  constructor(model, trim, top, color, moonroof, seatstrim, audio, wheelstrim, enginetype, doors){
-    super(model, trim, color, moonroof, seatstrim, audio, wheelstrim, enginetype, doors)
-    this.audio = 'premium'
-    this.top = top
+  constructor(model, trim, transmission, top, color, seatstrim, audio, wheelstrim){
+    super()
+    this.model = model
+    this.trim = trim
+    this.transmission = transmission
+    this.color = color
+    this.seatstrim = seatstrim
+    this.audio = audio
+    this.wheelstrim = wheelstrim
     this.moonroof = false
-    this.seatstrim = 'leather'
     this.enginetype = 'gasoline'
     this.convertible = true
+    this.doors = 2
   }
 }
 
@@ -111,7 +116,7 @@ class Truck extends Factory {
 // The following properties must be specified: model (mazda3), color (red), enginetype (hybrid), transmission (automatic), trim (touring), wheels (base), audio (premium), seats (leather), and moonroof (true)
 
 // Write your 'mazda3' instance below:
-let mazda3 = new Car ('mazda3', 2, 'hybrid', 'red', 'automatic', 'touring', 'base', 'leather','premium', true)
+let mazda3 = new Car ('red', 'mazda3','hybrid', 'automatic', 'touring', 'base','premium', 'leather', true)
 // Print mazda3. I should have all the above properties.
 // Write your code below:
 console.log(mazda3);
@@ -141,7 +146,7 @@ console.log(mazda3.customerBuild('yellow',['weather package', 'satellite radio',
 
 // Write your 'miataRf' instance below:
 // Write your code below:
-let miataRf = new Sport('Miata-RF', '2', 'hard top', 'premium','red','manual','Grand Touring','premium')
+let miataRf = new Sport('Miata-RF', 'Grand Touring', 'manual', 'hard top', 'red', 'leather', 'premium', 'premium')
 
 
 // Print miataRf. It should have all of the above properties. Plus, the extended warranty.
